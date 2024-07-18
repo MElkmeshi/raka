@@ -25,6 +25,8 @@ Auth::routes();
 
 // Routes that do not require authentication
 
+Route::get('/callback/handler', [App\Http\Controllers\PaymentController::class, 'handleCallback'])->name('handleCallback');
+
 // Routes requiring authentication
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user');
@@ -77,6 +79,3 @@ Route::get('register', [App\Http\Controllers\Auth\RegisterController::class, 'sh
 Route::post('register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);
 Route::get('guest-login', [App\Http\Controllers\Auth\LoginController::class, 'showGuestLoginForm'])->name('guest.login.form');
 Route::post('guest-login', [App\Http\Controllers\Auth\LoginController::class, 'guestLogin'])->name('guest.login');
-
-?>
-

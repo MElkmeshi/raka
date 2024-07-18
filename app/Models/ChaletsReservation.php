@@ -10,7 +10,7 @@ class ChaletsReservation extends Model
     use HasFactory;
     protected $table = 'chalets_reservations';
     protected $fillable = [
-        'guest_id', 'chalet_id', 'from', 'to', 'status',
+        'guest_id', 'chalet_id', 'from', 'to', 'status', 'is_paid',
     ];
 
     public function guest()
