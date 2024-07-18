@@ -43,7 +43,13 @@ class ReservationController extends Controller
         //     'from' => 'required|date|after:today',
         //     'to' => 'required|date|after:from',
         // ]);
-
+        try {
+            $id = Auth::guard('guests')->user()->id;
+        } catch (
+            \Exception $e
+        ) {
+            return redirect()->route('guest.login');
+        }
         $chalet_id = $request->input('chalet_id');
         $from = new \DateTime($request->input('from'));
         $to = (new \DateTime($request->input('to')))->modify('+1 day');
@@ -63,6 +69,7 @@ class ReservationController extends Controller
 
         $data = $request->only('from', 'to', 'guest_id', 'chalet_id');
         $data['guest_id'] = Auth::guard('guests')->user()->id;
+
         $chaletReservation = ChaletsReservation::create($data);
         $chalet = Chalets::find($chalet_id);
         $amount = $chalet->category->price * $from->diff($to)->days * 0.1;
@@ -76,10 +83,15 @@ class ReservationController extends Controller
                 $redirectUrl = $apiResponse->getRedirectUrl();
                 return redirect($redirectUrl);
             } elseif ($apiResponse->getOriginalResponse()->hasError()) {
-                return redirect()->route('main')->with('success', 'تم الحجز بنجاح!');
+                $errorCode = $apiResponse->getOriginalResponse()->getErrorCode();
+                $errorMessage = $apiResponse->getOriginalResponse()->getErrorMessage();
+                info("Error Code: $errorCode, Error Message: $errorMessage");
+                echo "Error Code: $errorCode, Error Message: $errorMessage";
+                print_r("Error Code: $errorCode, Error Message: $errorMessage");
+                // return redirect()->route('main')->with('success', 'تم الحجز بنجاح!');
             }
         } catch (\Exception $e) {
-            return redirect()->route('main')->with('success', 'تم الحجز بنجاح!');
+            // return redirect()->route('main')->with('success', 'تم الحجز بنجاح!');
         }
     }
 }

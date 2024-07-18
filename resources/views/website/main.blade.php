@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <title>
-      رخاء  
+      رخاء
     </title>
   </head>
   <body class="tajawal-bold">
@@ -42,7 +42,7 @@
   transition: all 0.3s ease;
 }
 
-.site-nav .site-menu li a:hover, 
+.site-nav .site-menu li a:hover,
 .site-nav .site-menu li.active a {
   background-color: #035f58;
   border-radius: 5px;
@@ -152,37 +152,37 @@
       font-weight: 200;
       font-style: normal;
     }
-    
+
     .tajawal-light {
       font-family: "Tajawal", sans-serif;
       font-weight: 300;
       font-style: normal;
     }
-    
+
     .tajawal-regular {
       font-family: "Tajawal", sans-serif;
       font-weight: 400;
       font-style: normal;
     }
-    
+
     .tajawal-medium {
       font-family: "Tajawal", sans-serif;
       font-weight: 500;
       font-style: normal;
     }
-    
+
     .tajawal-bold {
       font-family: "Tajawal", sans-serif;
       font-weight: 700;
       font-style: normal;
     }
-    
+
     .tajawal-extrabold {
       font-family: "Tajawal", sans-serif;
       font-weight: 800;
       font-style: normal;
     }
-    
+
     .tajawal-black {
       font-family: "Tajawal", sans-serif;
       font-weight: 900;
@@ -194,15 +194,15 @@
       align-items: center; /* لتوسيط العناصر عمودياً */
       width: 100%;
     }
-    
+
     .site-navigation .logo {
       margin-right: auto; /* يدفع الشعار إلى اليسار */
     }
-    
+
     .site-navigation .site-menu {
       flex-grow: 1; /* تأكد من أن القائمة تستفيد من المساحة المتاحة */
     }
-    
+
     .site-navigation .burger {
       margin-left: auto; /* يدفع الأيقونة إلى اليمين */
     }
@@ -271,7 +271,7 @@
               </ul>
             </div>
             <div class="login-button d-none d-lg-inline-block tajawal-bold mr-3">
-              <a href="login.html" class="btn btn-primary">تسجيل الدخول</a>
+              <a href="{{ route('guest.login') }}" class="btn btn-primary">تسجيل الدخول</a>
             </div>
             <a href="#" class="burger light mt-1 site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
               <span></span>
@@ -280,7 +280,7 @@
         </div>
       </div>
     </nav>
-    
+
     <section class="hero">
     <div class="hero">
       <div class="hero-slide">
@@ -296,7 +296,7 @@
           class="img overlay"
           style="background-image: url('images/456.jpg')"
         ></div>
-      </div>    
+      </div>
       <div class="container">
         <div class="row justify-content-center align-items-center">
           <div class="col-lg-9 text-center">
@@ -322,7 +322,7 @@
                   <label for="check-in" class="form-label mb-0">تسجيل الدخول</label>
                   <input type="date" id="check-in" class="form-control border-0" />
                 </div>
-                
+
                 <span class="divider">|</span>
                 <div class="d-flex flex-column ms-3">
                   <label for="check-out" class="form-label mb-0">تسجيل الخروج</label>
@@ -343,7 +343,7 @@
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>
@@ -358,7 +358,7 @@
           </div>
         </div>
         <div class="row">
-            @foreach ($municipalities as $municipality) 
+            @foreach ($municipalities as $municipality)
           <div class="col-md-4 mb-4">
             <div class="card border-0">
               <div class="image-container max-w-100 " >
@@ -369,9 +369,9 @@
               </div>
             </div>
           </div>
-        
+
           @endforeach
-        
+
         </div>
       </div>
     </div>
@@ -396,7 +396,7 @@
                         $(document).ready(function(){
                             $('#carouselExample').carousel();
                         });
-                    </script>                    
+                    </script>
                         <div class="carousel-inner">
                             @foreach ($chalet->category->categoryAttach as $categoryAttach)
                                 <div class="carousel-item {{$loop->first ? 'active' :''}}">
@@ -440,7 +440,7 @@
                 </div>
             </div>
         @endforeach
-        
+
         </div>
       </div>
       </div>
@@ -474,7 +474,7 @@
               <div class="feature-text">
                 <h3 class="heading p-3 mb-2 tajawal-bold"> دليلك الشامل لأفضل المنتجعات والشاليهات</h3>
                 <p class="text-black-50 mb-5 tajawal-medium">
-                  في منصتنا، نؤمن بأن عطلتك تستحق أفضل مكان للإقامة. نقدم لك مجموعة مختارة بعناية من المنتجعات والشاليهات التي توفر لك تجربة إقامة لا تُنسى. 
+                  في منصتنا، نؤمن بأن عطلتك تستحق أفضل مكان للإقامة. نقدم لك مجموعة مختارة بعناية من المنتجعات والشاليهات التي توفر لك تجربة إقامة لا تُنسى.
                 </p>
               </div>
             </div>
@@ -486,12 +486,12 @@
               <div class="feature-text">
                 <h3 class="heading p-3 mb-2 tajawal-bold ">منصة لأفضل الشاليهات</h3>
                 <p class="text-black-50 mb-5 tajawal-medium">
-                  الوجهة المثالية للبحث عن الشاليهات والمنتجعات. نهدف إلى توفير تجربة بحث سلسة تمكنك من العثور على أفضل الأماكن للإقامة. 
+                  الوجهة المثالية للبحث عن الشاليهات والمنتجعات. نهدف إلى توفير تجربة بحث سلسة تمكنك من العثور على أفضل الأماكن للإقامة.
                 </p>
               </div>
             </div>
 
-           
+
           </div>
         </div>
         <div class="row section-counter mt-5">
@@ -548,7 +548,7 @@
     </div>
   </section>
     <!-- SECTION 5 -->
-   
+
     <section class="section bg-light" dir="rtl">
     <div class="section section-5 bg-light">
       <div class="container">
@@ -595,7 +595,7 @@
               </div>
           @endforeach
       </div>
-      
+
       </div>
     </div>
     </section>
@@ -695,10 +695,10 @@
 
         <div class="row mt-5">
           <div class="col-12 text-center">
-            <!-- 
+            <!--
               **==========
-              NOTE: 
-              Please don't remove this copyright link unless you buy the license here https://untree.co/license/  
+              NOTE:
+              Please don't remove this copyright link unless you buy the license here https://untree.co/license/
               **==========
             -->
 
